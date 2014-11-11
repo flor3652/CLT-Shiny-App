@@ -12,6 +12,8 @@ shinyServer(function(input, output){
                                        rate=input$rate)
     if(input$dist=="chisq") pop <- rchisq(input$N, 
                                          df=input$df)
+    if(input$dist=="pois") pop <- rpois(input$N, 
+                                          lambda=input$lambda)
     pop
   })
   

@@ -10,7 +10,8 @@ shinyUI(pageWithSidebar(
                 "Which distribution would you like this demonstrated for?",
                 list("Normal"="norm",
                      "Exponential"="exp",
-                     "Chi-Squared"="chisq")),
+                     "Chi-Squared"="chisq",
+                     "Poisson"="pois")),
     
     #### Setting unique inputs for the different kinds of distributions
     #normal
@@ -30,6 +31,11 @@ shinyUI(pageWithSidebar(
     conditionalPanel(
       condition = "input.dist == 'chisq'",
       numericInput("df", "Degrees of Freedom:",10)
+    ),
+    
+    conditionalPanel(
+      condition = "input.dist == 'pois'",
+      numericInput("lambda", "Lambda:", 1)
     ),
     
     numericInput("n", "Sample Size (of each sample):", 10),
