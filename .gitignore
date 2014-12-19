@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 packrat/lib*/
+uploadToShinyApps_dot_io.R
+shinyapps
